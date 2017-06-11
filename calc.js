@@ -1,23 +1,19 @@
+//宣告：各個物件Listener
+
 //計算 1.BMI 2.腰圍 3.基礎代謝率
 var cm, Height, Weight, Age, waistCircumference, workType, sex;
 var weightStatus, waistCircumferenceStatus;
 var bmi, bmr, dayCalorie;
 
-//-------input part-------
-cm = parseInt(cm);                                 //身高cm
-Weight = parseFloat(Weight);                       //體重kg
-Age = parseInt(Age);                               //年齡
-waistCircumference = parseInt(waistCircumference); //腰圍cm
-workType = parseFInt(workType);                    //工作量(0, 1, 2)
-sex = parseInt(sex);                               //性別(0, 1)
 
 //-------function part-------
-Height = parseFloat(cm) / 100; //身高m
 
 function BMI() //算BMI
 {
+    Height = parseFloat(cm) / 100; //身高m
     bmi = (Weight / (Height * Height));
     bmi = parseFloat(bmi);
+    bmi.toFixed(2); //取小數後兩位
 }
 
 function judgeWeightStatus() //判斷BMI超標
@@ -84,6 +80,7 @@ function BMR() //算基礎代謝率
     else
         bmr = (9.6 * Weight) + (1.8 * cm) - (4.7 * Age) + 655;
     bmr = parseFloat(bmr);
+    bmr.toFixed(2);
 }
 
 function allVariableClear()
@@ -100,4 +97,39 @@ function allVariableClear()
     bmi = 0;
     bmr = 0.0;
     dayCalorie = 0;
+}
+
+//-----All method-----
+function CALCULATE()
+{
+    var gender_select=document.getElementById("gender");
+    var age_select=document.getElementById("age");
+    var height_select=document.getElementById("height");
+    var weight_select=document.getElementById("weight");
+    var waist_select=document.getElementById("waist");
+    var worklevel_select=document.getElementById("work");
+    cm=height_select.value;
+    Weight=weight_select.value;
+    Age=age_select.value;
+    waistCircumference=waist.value;
+    workType=worklevel_select.value;
+    console.log(cm,Weight,Age,waistCircumference,workType);
+    if(workType=="low") workType=0;
+    else if(workType=="mid") workType=1;
+    else workType=2;
+    //-------input part-------
+    cm = parseInt(cm);                                 //身高cm
+    Weight = parseFloat(Weight);                       //體重kg
+    Age = parseInt(Age);                               //年齡
+    waistCircumference = parseInt(waistCircumference); //腰圍cm
+    workType = parseInt(workType);                    //工作量(0, 1, 2)
+    sex = parseInt(sex);                               //性別(0, 1)
+
+    BMI();
+    judgeWeightStatus();
+    judgeWaistCircumference();
+    everydayCalories();
+    BMR();
+    var print_result=document.getElementById("data_result");
+    print_result.innerHTML="你的BMI"+bmi+"<br>你的基礎代謝率(BMR)"+bmr;
 }

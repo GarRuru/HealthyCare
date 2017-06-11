@@ -2,12 +2,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>基礎代謝率計算</title>
+    <title>身體數值簡易計算</title>
     
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <style type="text/css">
 
-            body{	font-family: 'OSwald',"Noto Sans TC Regular",sans-serif;
+            body{	font-family: 'OSwald','Noto Sans TC Regular',sans-serif;
                     src:"NotoSansTC-Regular.otf";
 				}
 			nav	{	font-weight: bold;
@@ -63,15 +63,14 @@
             }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-        //<script src = "caluiform_JQ.js">
-        
-        
-        </script>
+        //<script src = "caluiform_JQ.js"></script>
 </head>
 <body background = 'images/rice.jpg' >
+        <script src="calc.js"></script>
+
         <div>
             <div class = "mainTitle">
-                <a href = "homepage.html"><img src = "images/titleLogo.png" width = "70px" height = "70px" ></a><span class = "demo1">你的健康小幫手</span>
+                <a href = "homepage.html"><img src = "images/titleLogo.png" width = "70px" height = "70px" ></a><span class = "demo1" style="padding:18px">你的健康小幫手</span>
             </div>
             <div>
                 <nav>
@@ -84,15 +83,15 @@
 
             <div id="FORM">
                 <h1 style="color:white">個人健康指標試算</h1>
+                <p style="color:white; font-size:35px;">性別 <input type="radio" id="gender" name="gender" value="male" ><span style="font-size:26px">男生 <input type="radio" name="gender" value="female"> 女生 </span></p>
+                <p style="color:white; font-size:35px;">年齡 <input type="number" id="age" name= "age"  value="18" required class="modern_form"> 歲 </p>                
+                <p style="color:white; font-size:35px;">身高 <input type="text" id="height" name= "height" placeholder="請輸入數字" required class="modern_form"> 公分(cm) </p>
+                <p style="color:white; font-size:35px;">體重 <input type="text" id="weight" name= "weight" placeholder="請輸入數字" required class="modern_form"> 公斤(kg) </p>
+                <p style="color:white; font-size:35px;">腰圍 <input type="text" id="waist" name= "waist" placeholder="請輸入數字" required class="modern_form"> 公分(cm) </p>
+                <p style="color:white; font-size:35px;">工作量<input type="radio" id="work" name="work" value="low"> <span style="font-size:26px">輕度工作 <input type="radio" name="work" value="mid">中度工作 <input type="radio" name="work" value="high">重度工作</span></p>
 
-                <p style="color:white; font-size:35px;">性別 <input type="radio" name="gender" value="male" ><span style="font-size:26px">男生 <input type="radio" name="gender" value="female"> 女生 </span></p>
-                <p style="color:white; font-size:35px;">年齡 <input type="number" name= "age"  value="18" required class="modern_form"> 歲 </p>                
-                <p style="color:white; font-size:35px;">身高 <input type="text" name= "height" placeholder="請輸入數字" required class="modern_form"> 公分(cm) </p>
-                <p style="color:white; font-size:35px;">體重 <input type="text" name= "weight" placeholder="請輸入數字" required class="modern_form"> 公斤(kg) </p>
-                <p style="color:white; font-size:35px;">腰圍 <input type="text" name= "waist" placeholder="請輸入數字" required class="modern_form"> 公分(cm) </p>
-                <p style="color:white; font-size:35px;">工作量<input type="radio" name="low"> <span style="font-size:26px">輕度工作 <input type="radio" name="mid">中度工作 <input type="radio" name="high">重度工作</span></p>
-
-                <p><input type="submit" value="幫我計算!" class="modern_button">    <input type="reset" value="我打錯了!我要重來!" class="modern_button"></p>
+                <p><input id="submit_but" type="button" value="幫我計算!" class="modern_button" onclick="CALCULATE()">    <input type="reset" id="rst" value="我打錯了!我要重來!" class="modern_button"></p>
+                
             </div>
             <div id="data_result"></div>
             
