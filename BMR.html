@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>基礎代謝率計算</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <style type="text/css">
+
+            body{	font-family: 'OSwald',"Noto Sans TC Regular",sans-serif;
+                    src:"NotoSansTC-Regular.otf";
+				}
+			nav	{	font-weight: bold;
+					color: yellow;
+					text-align: center;
+					width: 50%;
+					background-color: rgba(173, 173, 173, 0.3);
+					float: left;
+				}
+			nav ul{	display: none;
+					list-style: none;
+					margin: 0;
+					padding: 0;
+				}
+			nav:hover ul{
+					display: block;
+				}
+			nav ul li{
+					border-top: 2px solid royalblue;
+					background-color: white;
+					width: 100%;
+					color:black;
+				}
+			nav ul li:hover{
+					background-color: powderblue;
+				}
+			a	{	text-decoration: none;
+                    color:pink;
+				}
+            h1{
+                color:pink;
+                width: 100%;
+                text-align: center;
+            }
+            .mainTitle{
+                font-size: 72px;
+                color: pink;
+                text-align: center;
+            }
+
+            .modern_form{
+                border:none;
+                border-bottom: 20px white;
+                background-color: rgba(255,255,255,0);
+                padding :13px;
+                resize:none;
+            }
+            .modern_button{
+                background-color: rgba(0, 0, 0, 0);
+                border-color:rgba(255, 255, 255, 0.6);
+                color:white;
+                padding :10px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        //<script src = "caluiform_JQ.js">
+        
+        
+        </script>
+</head>
+<body background = 'images/rice.jpg' >
+        <div>
+            <div id="title_area">
+                <p class = "mainTitle"><a href = "專案ver1.html"><img src = "images/titleLogo.png" width = "70px" height = "70px" ></a>首頁</p>
+            </div>
+            <div id="toolbar">
+                <nav>
+                    <a href = "熱量試算.html">熱量試算</a>
+                </nav>
+                <nav>
+                    <a href = "基礎代謝率計算.html">基礎代謝率計算</a>
+                </nav>
+            </div>
+
+            <div id="FORM">
+                <h1 style="color:white">個人健康指標試算</h1>
+
+                <p style="color:white; font-size:35px;">性別 <input type="radio" name="gender" value="male" ><span style="font-size:26px">男生 <input type="radio" name="gender" value="female"> 女生 </span></p>
+                <p style="color:white; font-size:35px;">年齡 <input type="number" name= "age"  value="18" required class="modern_form"> 歲 </p>                
+                <p style="color:white; font-size:35px;">身高 <input type="text" name= "height" placeholder="請輸入數字" required class="modern_form"> 公分(cm) </p>
+                <p style="color:white; font-size:35px;">體重 <input type="text" name= "weight" placeholder="請輸入數字" required class="modern_form"> 公斤(kg) </p>
+                <p style="color:white; font-size:35px;">腰圍 <input type="text" name= "waist" placeholder="請輸入數字" required class="modern_form"> 公分(cm) </p>
+                <p style="color:white; font-size:35px;">工作量<input type="radio" name="low"> <span style="font-size:26px">輕度工作 <input type="radio" name="mid">中度工作 <input type="radio" name="high">重度工作</span></p>
+
+                <p><input type="submit" value="幫我計算!" class="modern_button">    <input type="reset" value="我打錯了!我要重來!" class="modern_button"></p>
+            </div>
+            <div id="data_result"></div>
+            
+        </div>
+    </body>
+</html>
