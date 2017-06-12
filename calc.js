@@ -1,5 +1,3 @@
-//宣告：各個物件Listener
-
 //計算 1.BMI 2.腰圍 3.基礎代謝率
 var cm, Height, Weight, Age, waistCircumference, workType, sex;
 var weightStatus, waistCircumferenceStatus;
@@ -12,7 +10,7 @@ function BMI() //算BMI
 {
     Height = parseFloat(cm) / 100; //身高m
     bmi = (Weight / (Height * Height));
-    bmi = parseFloat(bmi);
+    //bmi = parseFloat(bmi);
     bmi.toFixed(2); //取小數後兩位
 }
 
@@ -79,7 +77,7 @@ function BMR() //算基礎代謝率
         bmr = (13.7 * Weight) + (5.0 * cm) - (6.8 * Age) + 66;
     else
         bmr = (9.6 * Weight) + (1.8 * cm) - (4.7 * Age) + 655;
-    bmr = parseFloat(bmr);
+    //bmr = parseFloat(bmr);
     bmr.toFixed(2);
 }
 
@@ -102,21 +100,27 @@ function allVariableClear()
 //-----All method-----
 function CALCULATE()
 {
-    var gender_select=document.getElementById("gender");
+    //宣告：各個物件Listener
+    var male_select=document.getElementById("MALE_G");
+    var female_select=document.getElementById("FEMALE_G");
     var age_select=document.getElementById("age");
     var height_select=document.getElementById("height");
     var weight_select=document.getElementById("weight");
     var waist_select=document.getElementById("waist");
-    var worklevel_select=document.getElementById("work");
+
+    var Work_level_low =document.getElementById("low_w");
+    var Work_level_mid =document.getElementById("mid_w");
+    var Work_level_high=document.getElementById("high_w");
+
     cm=height_select.value;
     Weight=weight_select.value;
     Age=age_select.value;
     waistCircumference=waist.value;
-    workType=worklevel_select.value;
-    console.log(cm,Weight,Age,waistCircumference,workType);
-    if(workType=="low") workType=0;
-    else if(workType=="mid") workType=1;
-    else workType=2;
+    if(Work_level_low.checked==true) workType=2;
+    else if(Work_level_mid.checked==true) workType=1;
+    else workType=0;
+    if(male_select.checked==true)   sex=1;  //male
+    else sex=0; //female
     //-------input part-------
     cm = parseInt(cm);                                 //身高cm
     Weight = parseFloat(Weight);                       //體重kg
@@ -130,6 +134,14 @@ function CALCULATE()
     judgeWaistCircumference();
     everydayCalories();
     BMR();
+    //-----Print Session------
+    var BMI_P=bmi.toFixed(2);
+    var BMR_P=bmr.toFixed(2);
+    var dayCal_P=dayCalorie.toFixed(2);
     var print_result=document.getElementById("data_result");
-    print_result.innerHTML="你的BMI"+bmi+"<br>你的基礎代謝率(BMR)"+bmr;
+    print_result.innerHTML="你的BMI"+BMI_P+"<br>你的基礎代謝率(BMR)"+BMR_P+"<br>你的每日所需熱量:"+dayCal_P;
+    console.log(waistCircumferenceStatus);
+    if(waistCircumferenceStatus==0)
+        print_result.innerHTML+="<br>你的腰圍正常！！<br>";
+        else print_result.innerHTML+="<br>你的腰圍過粗！！<br>";
 }
