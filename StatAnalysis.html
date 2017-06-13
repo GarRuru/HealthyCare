@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <title>基礎數值試算 - 你的健康小幫手</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style = "text/css">
+    .demo1{color: #fff; text-shadow: -1px -1px rgba(197, 223, 248,0.8),-2px -2px rgba(197, 223, 248,0.8),-3px -3px rgba(197, 223, 248,0.8),-4px -4px rgba(197, 223, 248,0.8),-5px -5px rgba(197, 223, 248,0.8),-6px -6px rgba(197, 223, 248,0.8); 
+    }
+    </style>
+    <script src="calc.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script></script>
+    <body>
+        <!-- Side Navigation -->
+        <nav class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left w3-center" style="display:none" id="mySidebar">
+            <h1 class="w3-xxxlarge w3-text-theme">Menu</h1>
+            <a href="CaloriesCal.html" class="w3-bar-item w3-button"><i class="fa fa-fire w3-margin-bottom w3-text-theme" style="font-size:30px">
+            熱量試算</i></a>
+            <a href="StatAnalysis.html" class="w3-bar-item w3-button"><i class="fa fa-bar-chart w3-margin-bottom w3-text-theme" style="font-size:30px">
+            身體數值計算</i></a>
+            <a href="Exercise.html" class="w3-bar-item w3-button"><i class="fa fa-bicycle w3-margin-bottom w3-text-theme" style="font-size:30px"> 運動量計算</i></a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-file-text w3-margin-bottom w3-text-theme" style="font-size:30px"> 說明文件</i></a>
+            <a href="homepage.html" class="w3-bar-item w3-button"><i class="fa fa-home w3-margin-bottom w3-text-theme" style="font-size:30px"> 回到首頁</i></a>
+            <button class="w3-bar-item w3-button" onclick="w3_close()"><i class="fa fa-remove w3-text-theme"style="font-size:30px">關閉</i></button>
+        </nav>
+        <!-- Header -->
+        <header class="w3-container w3-theme w3-padding" id="myHeader">
+            <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+            <div class="w3-center">
+                <h1 class="w3-xxxlarge w3-animate-bottom"><span class = "demo1">身體數值計算</span></h1>
+                <div class="w3-padding-32">
+                </div>
+            </div>
+        </header>
+        <hr>
+        <!-- Modal -->
+        <div class="w3-row-padding">
+            <div class="w3-half">
+                <form class="w3-container w3-card-4" action="#">
+                    <h2>輸入你的基本資訊</h2>
+                    <div class="w3-section">
+                        <label>年齡</label>
+                        <input class="w3-input" type="text" required id="age" value=0>
+                    </div>
+                    <div class="w3-section">
+                        <label>身高(cm)</label>
+                        <input class="w3-input" type="text" required id="height" value=0>
+                    </div>
+                    <div class="w3-section">
+                        <label>體重(kg)</label>
+                        <input class="w3-input" type="text" required id="weight" value=0>
+                    </div>
+                    <div class="w3-section">
+                        <label>腰圍(cm)</label>
+                        <input class="w3-input" type="text" required id="waist" value=0>
+                    </div>
+                    <div class="w3-section">
+                        性別
+                        <input id="MALE_G" class="w3-radio" type="radio" name="gender" value="男生" checked> 
+                        <label for="MALE_G">男生Male</label>
+                        <input id="FEMALE_G" class="w3-radio" type="radio" name="gender" value="女生">
+                        <label for="FEMALE_G">女生Female</label>
+                    </div>
+                    <div class="w3-section">
+                        工作量
+                        <input id="low_w" class="w3-radio" type="radio" name="work" value="輕度工作" checked>
+                        <label for="low_w">輕度工作</label>
+                        <input id="mid_w" class="w3-radio" type="radio" name="work" value="中度工作">
+                        <label for="mid_w">中度工作</label>
+                        <input id="high_w" class="w3-radio" type="radio" name="work" value="重度工作">
+                        <label for="high_w">重度工作</label>
+                </form>
+                </div>
+                <div class="w3-section">                        
+                    <button class="w3-btn w3-theme" onclick="CALCULATE()" id="send">計算結果</button>
+                    <button class="w3-btn w3-theme" onclick="allVariableClear()" id="reset">Reset</button> 
+                </div>
+            </div>
+            <!-- Result Area -->
+            <div class="w3-half" style="display: none">
+            </div>
+            <div class="w3-half w3-container w3-card-4" id="result_age" style="padding:3px;display:none;">
+            </div>
+            <div class="w3-half w3-container w3-card-4" id="result_BMI" style="padding:3px;display:none;">
+            </div>
+            <div class="w3-half w3-container w3-card-4" id="result_waist" style="padding:3px;display:none;">
+            </div>
+            <div class="w3-half w3-container w3-card-4" id="result_BMR" style="padding:3px;display:none;">
+            </div>
+            <div class="w3-half w3-container w3-card-4" id="result_dayCAL" style="padding:3px;display:none;">
+            </div>
+        </div>
+        <hr>
+        <!-- Footer -->
+        <footer class="w3-container w3-theme-dark w3-padding-16">
+            <h3>About this site</h3>
+            <p>Designed By Yu-Hsuan Chen , Yu-Hsiang Chen</p>
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+            <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+                <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+                <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+                <i class="fa fa-chevron-circle-up"></i></span></a>
+            </div>
+        </footer>
+        <!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+        <script>
+            // Side navigation
+            function w3_open() {
+                var x = document.getElementById("mySidebar");
+                x.style.width = "40%";
+                x.style.fontSize = "40px";
+                x.style.paddingTop = "10%";
+                x.style.display = "block";
+            }
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+            $("#send").click(function(){
+                $("#result_age").fadeIn(200);
+                $("#result_BMI").fadeIn(500);
+                $("#result_waist").fadeIn(900);
+                $("#result_BMR").fadeIn(1400);
+                $("#result_dayCAL").fadeIn(2000);
+            });
+            $("#reset").click(function(){
+                $("#result_dayCAL").fadeOut(200);
+                $("#result_BMR").fadeOut(500);
+                $("#result_waist").fadeOut(900);
+                $("#result_BMI").fadeOut(1400);
+                $("#result_age").fadeOut(2000);
+            });
+            
+            
+        </script>
+    </body>
+</html>

@@ -96,15 +96,19 @@ function allVariableClear()
     bmr = 0.0;
     dayCalorie = 0;
     
-    document.getElementById("age").value=18;
-    document.getElementById("height").value="";
-    document.getElementById("weight").value="";
-    document.getElementById("waist").value="";
+    document.getElementById("age").value="0";
+    document.getElementById("height").value="0";
+    document.getElementById("weight").value="0";
+    document.getElementById("waist").value="0";
 }
+
+
+
 
 //-----All method-----
 function CALCULATE()
 {
+
     //宣告：各個物件Listener
     var male_select=document.getElementById("MALE_G");
     var female_select=document.getElementById("FEMALE_G");
@@ -143,10 +147,26 @@ function CALCULATE()
     var BMI_P=bmi.toFixed(2);
     var BMR_P=bmr.toFixed(2);
     var dayCal_P=dayCalorie.toFixed(2);
-    var print_result=document.getElementById("data_result");
-    print_result.innerHTML="你的BMI:"+BMI_P+"<br>你的基礎代謝率(BMR):"+BMR_P+"<br>你的每日所需熱量:"+dayCal_P;
-    //console.log(waistCircumferenceStatus);
+    
+    document.getElementById("result_age").innerHTML="<h3>你的年齡</h3><p>"+Age+"</p>";
+    document.getElementById("result_BMI").innerHTML="<h3>你的身體質量指數(BMI)</h3><p>"+BMI_P+"</p>";
+    switch(weightStatus)
+    {
+        case -1:document.getElementById("result_BMI").innerHTML+="<p>你的體重過輕！</p>"; break;
+        case  0:document.getElementById("result_BMI").innerHTML+="<p>你的體重正常！</p>"; break;
+        case  1:document.getElementById("result_BMI").innerHTML+="<p>你屬於輕度肥胖！</p>"; break;
+        case  2:document.getElementById("result_BMI").innerHTML+="<p>你屬於中度肥胖！</p>"; break;
+        case -1:document.getElementById("result_BMI").innerHTML+="<p>你屬於重度肥胖！</p>"; break;
+    }
+    document.getElementById("result_waist").innerHTML="<h3>你的腰圍</h3><p>"+waistCircumference+"公分</p>"
     if(waistCircumferenceStatus==0)
-        print_result.innerHTML+="<br>你的腰圍正常！！<br>";
-    else print_result.innerHTML+="<br>你的腰圍過粗！！<br>";
+        document.getElementById("result_waist").innerHTML+="<p>你的腰圍正常！！</p>";
+    else document.getElementById("result_waist").innerHTML+="<p>你的腰圍過粗！！</p>";
+
+    document.getElementById("result_BMR").innerHTML="<h3>你的基礎代謝率(BMR)</h3><p>"+BMR_P+" 大卡</p>";
+    document.getElementById("result_dayCAL").innerHTML="<h3>你的每日所需熱量</h3><p>"+dayCal_P+" 大卡</p>";
+
+    console.log(BMI_P,BMR_P,dayCal_P,waistCircumferenceStatus);
+
+
 }

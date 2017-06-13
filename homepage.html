@@ -1,79 +1,111 @@
+<!-- 說明文件超連結還沒放，底下的<p>要補上說明文字-->
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>首頁 - 你的健康小幫手</title>
-        <meta charset="utf-8" />
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <style type="text/css">
+    <title>首頁 - 你的健康小幫手</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style = "text/css">
+    .demo1{color: #fff; text-shadow: -1px -1px rgba(197, 223, 248,0.8),-2px -2px rgba(197, 223, 248,0.8),-3px -3px rgba(197, 223, 248,0.8),-4px -4px rgba(197, 223, 248,0.8),-5px -5px rgba(197, 223, 248,0.8),-6px -6px rgba(197, 223, 248,0.8); 
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#div1").fadeIn();
+        $("#div2").fadeIn(1500);
+        $("#div3").fadeIn(3000);
+    });
 
-            body{	font-family: 'OSwald','Noto Sans TC Regular',sans-serif;
-                    src:"NotoSansTC-Regular.otf";
-					color: royalblue;
-				}
-			nav	{	font-weight: bold;
-					color: yellow;
-					text-align: center;
-					width: 50%;
-					background-color: rgba(173, 173, 173, 0.3);
-					float: left;
-				}
-			nav ul{	display: none;
-					list-style: none;
-					margin: 0;
-					padding: 0;
-				}
-			nav:hover ul{
-					display: block;
-				}
-			nav ul li{
-					border-top: 2px solid royalblue;
-					background-color: white;
-					width: 100%;
-					color:black;
-				}
-			nav ul li:hover{
-					background-color: powderblue;
-				}
-			a	{	text-decoration: none;
-                    color:pink;
-				}
-            h1{
-                color:pink;
-                width: 100%;
-                text-align: center;
-            }
-            .mainTitle{
-                width: 700px;
-                padding: 30px;
-                font: bold 55px/100% "微軟正黑體";
-                font-size: 72px;
-                color:#fff;
-                
-            }
-            .demo1{
-                color: #fff; text-shadow: -1px -1px rgba(197, 223, 248,0.8),-2px -2px rgba(197, 223, 248,0.8),-3px -3px rgba(197, 223, 248,0.8),-4px -4px rgba(197, 223, 248,0.8),-5px -5px rgba(197, 223, 248,0.8),-6px -6px rgba(197, 223, 248,0.8);
-            }
-            body { background-image:url('images/rice.jpg');
-                    background-repeat:no-repeat;
-                    background-attachment:fixed; }
-        </style>
-        <script type = "text/javascript">
-
-        </script>
-    </head>
+    </script>
     <body>
-        <div>
-            <div class = "mainTitle">
-                <a href = "homepage.html"><img src = "images/titleLogo.png" width = "70px" height = "70px" ></a><span class = "demo1">你的健康小幫手</span>
+        <!-- Side Navigation -->
+        <nav class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left w3-center" style="display:none" id="mySidebar">
+            <h1 class="w3-xxxlarge w3-text-theme">Menu</h1>
+            <a href="CaloriesCal.html" class="w3-bar-item w3-button"><i class="fa fa-fire w3-margin-bottom w3-text-theme" style="font-size:30px">
+                    熱量試算</i></a>
+            <a href="StatAnalysis.html" class="w3-bar-item w3-button"><i class="fa fa-bar-chart w3-margin-bottom w3-text-theme" style="font-size:30px">
+                    身體數值計算</i></a>
+            <a href="Exercise.html" class="w3-bar-item w3-button"><i class="fa fa-bicycle w3-margin-bottom w3-text-theme" style="font-size:30px"> 運動量計算</i></a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-file-text w3-margin-bottom w3-text-theme" style="font-size:30px"> 說明文件</i></a>
+            <a href="homepage.html" class="w3-bar-item w3-button"><i class="fa fa-home w3-margin-bottom w3-text-theme" style="font-size:30px"> 回到首頁</i></a>
+            <button class="w3-bar-item w3-button" onclick="w3_close()"><i class="fa fa-remove w3-text-theme"style="font-size:30px">關閉</i></button>
+        </nav>
+        <!-- Header -->
+        <header class="w3-container w3-theme w3-padding" id="myHeader">
+            <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+            <div class="w3-center">
+                <h1 class="w3-xxxlarge w3-animate-bottom"><span class = "demo1">你的健康小幫手</span></h1>
+                <div class="w3-padding-32">
+
+                </div>
             </div>
-            <div>
-                <nav>
-                    <a href = "CaloriesCal.html">熱量試算</a>
-                </nav>
-                <nav>
-                    <a href = "BMR.html">基礎代謝率計算</a>
-                </nav>
+        </header>
+        <hr>
+        <!-- Modal -->
+        <div class="w3-row-padding w3-center w3-margin-top" id ="div0">
+            <div class="w3-third" id = "div1" style="display: none">
+                <div class="w3-card-2 w3-container" style="min-height:460px">
+                    <h3>熱量試算</h3>
+                    <br>
+                    <i class="fa fa-fire w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+                    <p>...</p>
+                    <p>...</p>
+                    <p>...</p>
+                    <p>...</p>
+                </div>
+            </div>
+            <div class="w3-third" id = "div2" style="display: none">
+                <div class="w3-card-2 w3-container" style="min-height:460px">
+                    <h3>身體數值計算</h3>
+                    <br>
+                    <i class="fa fa-bar-chart w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+                    <p>...</p>
+                    <p>...</p>
+                    <p>...</p>
+                    <p>...</p>
+                </div>
+            </div>
+            <div class="w3-third" id = "div3" style="display: none">
+                <div class="w3-card-2 w3-container" style="min-height:460px">
+                    <h3>運動量計算</h3>
+                    <br>
+                    <i class="fa fa-bicycle w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+                    <p>...</p>
+                    <p>...</p>
+                    <p>...</p>
+                    <p>...</p>
+                </div>
             </div>
         </div>
+        <hr>
+        <!-- Footer -->
+        <footer class="w3-container w3-theme-dark w3-padding-16">
+            <h3>About this site</h3>
+            <p>Designed By Yu-Hsuan Chen , Yu-Hsiang Chen</p>
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+            <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+                <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+                <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+                <i class="fa fa-chevron-circle-up"></i></span></a>
+            </div>
+        </footer>
+        <!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+        <script>
+            // Side navigation
+            function w3_open() {
+                var x = document.getElementById("mySidebar");
+                x.style.width = "40%";
+                x.style.fontSize = "40px";
+                x.style.paddingTop = "10%";
+                x.style.display = "block";
+            }
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
     </body>
 </html>
