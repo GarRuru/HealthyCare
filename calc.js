@@ -32,7 +32,7 @@ function judgeWeightStatus() //判斷BMI超標
 
 function judgeWaistCircumference() //腰圍
 {
-    waistCircumference = 0;                  //預設正常
+    waistCircumferenceStatus = 0;            //預設正常
     if(sex == 1 && waistCircumference >= 90) //男過多
         waistCircumferenceStatus = 1;
     if(sex == 0 && waistCircumference >= 80) //女過多
@@ -95,6 +95,11 @@ function allVariableClear()
     bmi = 0;
     bmr = 0.0;
     dayCalorie = 0;
+    
+    document.getElementById("age").value=18;
+    document.getElementById("height").value="";
+    document.getElementById("weight").value="";
+    document.getElementById("waist").value="";
 }
 
 //-----All method-----
@@ -139,9 +144,9 @@ function CALCULATE()
     var BMR_P=bmr.toFixed(2);
     var dayCal_P=dayCalorie.toFixed(2);
     var print_result=document.getElementById("data_result");
-    print_result.innerHTML="你的BMI"+BMI_P+"<br>你的基礎代謝率(BMR)"+BMR_P+"<br>你的每日所需熱量:"+dayCal_P;
-    console.log(waistCircumferenceStatus);
+    print_result.innerHTML="你的BMI:"+BMI_P+"<br>你的基礎代謝率(BMR):"+BMR_P+"<br>你的每日所需熱量:"+dayCal_P;
+    //console.log(waistCircumferenceStatus);
     if(waistCircumferenceStatus==0)
         print_result.innerHTML+="<br>你的腰圍正常！！<br>";
-        else print_result.innerHTML+="<br>你的腰圍過粗！！<br>";
+    else print_result.innerHTML+="<br>你的腰圍過粗！！<br>";
 }
