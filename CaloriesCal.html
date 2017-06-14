@@ -1,68 +1,558 @@
+<!-- 說明文件超連結還沒放，底下的<p>要補上說明文字-->
+
 <!DOCTYPE html>
 <html>
-<head>
+    <title>食物熱量計算 - 你的健康小幫手</title>
     <meta charset="UTF-8">
-    <title>熱量試算</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <style type="text/css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style type = "text/css">
+    .demo1{color: #fff; text-shadow: -1px -1px rgba(197, 223, 248,0.8),-2px -2px rgba(197, 223, 248,0.8),-3px -3px rgba(197, 223, 248,0.8),-4px -4px rgba(197, 223, 248,0.8),-5px -5px rgba(197, 223, 248,0.8),-6px -6px rgba(197, 223, 248,0.8); 
+    }
+    body {font-family: 'Oswald';}
+    h3{font-family: 'Oswald';}
 
-            body{	font-family: 'OSwald','Noto Sans TC Regular',sans-serif;
-                    src:"NotoSansTC-Regular.otf";
-				}
-			nav	{	font-weight: bold;
-					color: yellow;
-					text-align: center;
-					width: 50%;
-					background-color: rgba(173, 173, 173, 0.3);
-					float: left;
-				}
-			nav ul{	display: none;
-					list-style: none;
-					margin: 0;
-					padding: 0;
-				}
-			nav:hover ul{
-					display: block;
-				}
-			nav ul li{
-					border-top: 2px solid royalblue;
-					background-color: white;
-					width: 100%;
-					color:black;
-				}
-			nav ul li:hover{
-					background-color: powderblue;
-				}
-			a	{	text-decoration: none;
-                    color:pink;
-				}
-            h1{
-                color:pink;
-                width: 100%;
-                text-align: center;
-            }
-            .mainTitle{
-                font-size: 72px;
-                color: pink;
-            }
-        </style>
-        <script type = "text/javascript">
+    #MyCAL{
+    position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
+    top: 50%;  /*設置垂直位置*/
+    right: -30px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
+    background: #FF8800;  /*背景顏色*/
+    padding: 10px 20px;
+    border-radius: 10px;  /*圓角*/
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    }
+    #MyCAL:hover{  /*當滑鼠移至此區塊時，伸縮區塊*/
+        right: -10px;
+    }
+    #MyCAL #title{
+        padding-right: 5px;  /*讓標題與連結中間有空隙*/
+    }
 
-        </script>
-</head>
-    <body background = 'images/rice.jpg'>
-        <div>
-            <div class = "mainTitle">
-                <a href = "homepage.html"><img src = "images/titleLogo.png" width = "70px" height = "70px" ></a><span class = "demo1">你的健康小幫手</span>
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#div1").fadeIn();
+        $("#div2").fadeIn(1500);
+        $("#div3").fadeIn(3000);
+    });
+
+    </script>
+    <body>
+        <!-- Side Navigation -->
+        <nav class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left w3-center" style="display:none" id="mySidebar">
+            <h1 class="w3-xxxlarge w3-text-theme">Menu</h1>
+            <a href="CaloriesCal.html" class="w3-bar-item w3-button"><i class="fa fa-fire w3-margin-bottom w3-text-theme" style="font-size:30px">
+                    熱量試算</i></a>
+            <a href="StatAnalysis.html" class="w3-bar-item w3-button"><i class="fa fa-bar-chart w3-margin-bottom w3-text-theme" style="font-size:30px">
+                    身體數值計算</i></a>
+            <a href="Exercise.html" class="w3-bar-item w3-button"><i class="fa fa-bicycle w3-margin-bottom w3-text-theme" style="font-size:30px"> 運動量計算</i></a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-file-text w3-margin-bottom w3-text-theme" style="font-size:30px"> 說明文件</i></a>
+            <a href="homepage.html" class="w3-bar-item w3-button"><i class="fa fa-home w3-margin-bottom w3-text-theme" style="font-size:30px"> 回到首頁</i></a>
+            <button class="w3-bar-item w3-button" onclick="w3_close()"><i class="fa fa-remove w3-text-theme"style="font-size:30px">關閉</i></button>
+        </nav>
+        <!-- Header -->
+        <header class="w3-container w3-theme w3-padding" id="myHeader">
+            <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+            <div class="w3-center">
+                <h1 class="w3-xxxlarge w3-animate-bottom"><span class = "demo1">你的健康小幫手</span></h1>
+                <div class="w3-padding-32">
+
+                </div>
             </div>
-            <div>
-                <nav>
-                    <a href = "CaloriesCal.html">熱量試算</a>
-                </nav>
-                <nav>
-                    <a href = "BMR.html">基礎代謝率計算</a>
-                </nav>
+        </header>
+        <hr>
+        <!-- Side Bar-->
+        <div id="MyCAL">
+             <span id="title">熱量總計</span> 
+             <div id="result_CAL"><p style="text-align: right">                           1333kcal</p></div>
+        </div>
+
+
+        <!-- According -->
+        <div class="w3-container">
+        <div class="w3-row">
+            <div class="w3-quarter w3-container w3-red">
+                <h5>食物名稱</h5>
+            </div>
+            <div class="w3-quarter w3-container w3-blue">
+                <h5>每份熱量(Kcal)</h5>
+            </div>
+            <div class="w3-quarter w3-container w3-yellow">
+                <h5>食用量(份數）</h5>
             </div>
         </div>
-</body>
+        <p></p>
+        <button onclick="myAccFunc('Demo1')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">全穀根莖類</button>
+        <div id="Demo1" class="w3-hide">
+            <div class="w3-container">
+                <form class="w3-quarter w3-container w3-card-4">
+                        <div class="w3-section">      
+                            <input id="bowl_rice" class="w3-check" type="checkbox">
+                            <label>白飯（一碗）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="toast" class="w3-check" type="checkbox">
+                            <label>吐司（兩片）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="stream_bread" class="w3-check" type="checkbox">
+                            <label>饅頭（一個）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="noodles" class="w3-check" type="checkbox">
+                            <label>麵條（一人份）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="robogao" class="w3-check" type="checkbox">
+                            <label>蘿蔔糕（四塊）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="wire_noodle" class="w3-check" type="checkbox">
+                            <label>米粉（一碗）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="yenmai" class="w3-check" type="checkbox">
+                            <label>燕麥片（一碗）</label>
+                        </div>
+                        <hr>
+
+                 </form>
+                        <form class="w3-container w3-card-4 w3-quarter">
+                            <div class="w3-section" style="padding:3px">      
+                                <label>280</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:3px">      
+                                <label>140</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2.5px">      
+                                <label>280</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>280</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>280</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>140</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>280</label>
+                            </div>
+                            <hr>
+                            
+                        </form>
+                            <form class="w3-container w3-card-4 w3-quarter">
+                                <div class="w3-section" style="padding:9px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section"  style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                
+                            </form>
+
+            </div>
+        </div>
+        <button onclick="myAccFunc('Demo2')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">豆乳類</button>
+        <div id="Demo2" class="w3-hide">
+            <div class="w3-container">
+                <form class="w3-quarter w3-container w3-card-4">
+                        <div class="w3-section">      
+                            <input id="lowfat_milk" class="w3-check" type="checkbox">
+                            <label>低脂鮮奶（一杯）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="zerofat_milk" class="w3-check" type="checkbox">
+                            <label>脫脂鮮奶（一杯）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="soymilk" class="w3-check" type="checkbox">
+                            <label>豆漿（一杯）</label>
+                        </div>
+                 </form>
+                <form class="w3-container w3-card-4 w3-quarter">
+                    <div class="w3-section" style="padding:3px">      
+                        <label>120</label>
+                    </div>
+                    <hr>
+                    <div class="w3-section" style="padding:1px">      
+                        <label>80</label>
+                    </div>
+                    <hr>
+                    <div class="w3-section" style="padding:3px">      
+                        <label>55</label>
+                    </div>
+                </form>
+                <form class="w3-container w3-card-4 w3-quarter">
+                    <div class="w3-section" style="padding:2px">      
+                        <input class="w3-input" type="number" placeholder=0>
+                    </div>
+                    <div class="w3-section" style="padding:1px">      
+                        <input class="w3-input" type="number" placeholder=0>
+                    </div>
+                    <div class="w3-section" style="padding:1px">      
+                        <input class="w3-input" type="number" placeholder=0>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <button onclick="myAccFunc('Demo3')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">魚肉蛋類</button>
+        <div id="Demo3" class="w3-hide">
+            <div class="w3-container">
+                <form class="w3-quarter w3-container w3-card-4">
+                        <div class="w3-section">      
+                            <input id="fish" class="w3-check" type="checkbox">
+                            <label>各種魚類（100公克）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="shrimp" class="w3-check" type="checkbox">
+                            <label>草蝦（6隻）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="chickbrest" class="w3-check" type="checkbox">
+                            <label>雞胸肉（100公克）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="pork" class="w3-check" type="checkbox">
+                            <label>豬肉（100公克）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="egg" class="w3-check" type="checkbox">
+                            <label>蛋（一顆）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="beef" class="w3-check" type="checkbox">
+                            <label>牛肉（100公克）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="tofu" class="w3-check" type="checkbox">
+                            <label>豆腐（100公克）</label>
+                        </div>
+                        <hr>
+
+                 </form>
+                        <form class="w3-container w3-card-4 w3-quarter">
+                            <div class="w3-section" style="padding:3px">      
+                                <label>185</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:3px">      
+                                <label>55</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2.5px">      
+                                <label>185</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>228</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>55</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>250</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>98</label>
+                            </div>
+                            <hr>
+                            
+                        </form>
+                            <form class="w3-container w3-card-4 w3-quarter">
+                                <div class="w3-section" style="padding:9px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section"  style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                
+                            </form>
+
+            </div>
+        </div>
+        <button onclick="myAccFunc('Demo4')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">蔬菜水果</button>
+        <div id="Demo4" class="w3-hide">
+            <div class="w3-container">
+                <form class="w3-quarter w3-container w3-card-4">
+                        <div class="w3-section">      
+                            <input id="vege" class="w3-check" type="checkbox">
+                            <label>各式青菜（100公克）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="watermelon" class="w3-check" type="checkbox">
+                            <label>西瓜（100公克）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="banana" class="w3-check" type="checkbox">
+                            <label>香蕉（一根）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="papaya" class="w3-check" type="checkbox">
+                            <label>木瓜（100公克）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="little_tomato" class="w3-check" type="checkbox">
+                            <label>小番茄（100公克）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="guava" class="w3-check" type="checkbox">
+                            <label>芭樂（100公克）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="apple" class="w3-check" type="checkbox">
+                            <label>蘋果（100公克）</label>
+                        </div>
+                        <hr>
+
+                 </form>
+                        <form class="w3-container w3-card-4 w3-quarter">
+                            <div class="w3-section" style="padding:3px">      
+                                <label>50</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:3px">      
+                                <label>16.4</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2.5px">      
+                                <label>120</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>32</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>34</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>38</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>40</label>
+                            </div>
+                            <hr>
+                            
+                        </form>
+                            <form class="w3-container w3-card-4 w3-quarter">
+                                <div class="w3-section" style="padding:9px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section"  style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                
+                            </form>
+
+            </div>
+        </div>
+        <button onclick="myAccFunc('Demo5')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">油脂堅果類</button>
+        <div id="Demo5" class="w3-hide">
+            <div class="w3-container">
+                <form class="w3-quarter w3-container w3-card-4">
+                        <div class="w3-section">      
+                            <input id="oil" class="w3-check" type="checkbox">
+                            <label>動物油/植物油（一茶匙）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="walnut" class="w3-check" type="checkbox">
+                            <label>核桃（一粒）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="guazi" class="w3-check" type="checkbox">
+                            <label>去殼瓜子（一湯匙）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="sesame" class="w3-check" type="checkbox">
+                            <label>黑白芝麻（一茶匙）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="cashew_net" class="w3-check" type="checkbox">
+                            <label>腰果（10公克）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section">      
+                            <input id="peanut" class="w3-check" type="checkbox">
+                            <label>花生（10公克）</label>
+                        </div>
+
+                 </form>
+                        <form class="w3-container w3-card-4 w3-quarter">
+                            <div class="w3-section" style="padding:3px">      
+                                <label>45</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:3px">      
+                                <label>23</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2.5px">      
+                                <label>45</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>23</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>50</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="padding:2px">      
+                                <label>50</label>
+                            </div>
+                            
+                        </form>
+                            <form class="w3-container w3-card-4 w3-quarter">
+                                <div class="w3-section" style="padding:9px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section"  style="padding:6px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:4px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:4px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <div class="w3-section" style="padding:2px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                
+                            </form>
+
+            </div>
+        </div>
+        </div>
+
+        <hr><hr><hr><hr>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-theme-dark w3-padding-16">
+            <h3>About this site</h3>
+            <p>Designed By Yu-Hsuan Chen , Yu-Hsiang Chen</p>
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+            <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+                <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+                <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+                <i class="fa fa-chevron-circle-up"></i></span></a>
+            </div>
+        </footer>
+        <!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+        <script>
+            // Side navigation
+            function w3_open() {
+                var x = document.getElementById("mySidebar");
+                x.style.width = "40%";
+                x.style.fontSize = "40px";
+                x.style.paddingTop = "10%";
+                x.style.display = "block";
+            }
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+            //Accordions
+            function myAccFunc(id) {
+                var x = document.getElementById(id);
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else { 
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+
+        </script>
+    </body>
 </html>

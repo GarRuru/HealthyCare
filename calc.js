@@ -148,23 +148,27 @@ function CALCULATE()
     var BMR_P=bmr.toFixed(2);
     var dayCal_P=dayCalorie.toFixed(2);
     
-    document.getElementById("result_age").innerHTML="<h3>你的年齡</h3><p>"+Age+"</p>";
-    document.getElementById("result_BMI").innerHTML="<h3>你的身體質量指數(BMI)</h3><p>"+BMI_P+"</p>";
+    document.getElementById("result_age").innerHTML="<h3>你的年齡  <span style='font-size:22px; font-weight:bold;'>"+Age+"</span></h3>";
+    document.getElementById("result_BMI").innerHTML="<h3>你的身體質量指數(BMI)</h3><p style='text-align:center;'>"+BMI_P;
+
     switch(weightStatus)
     {
-        case -1:document.getElementById("result_BMI").innerHTML+="<p>你的體重過輕！</p>"; break;
-        case  0:document.getElementById("result_BMI").innerHTML+="<p>你的體重正常！</p>"; break;
-        case  1:document.getElementById("result_BMI").innerHTML+="<p>你屬於輕度肥胖！</p>"; break;
-        case  2:document.getElementById("result_BMI").innerHTML+="<p>你屬於中度肥胖！</p>"; break;
-        case -1:document.getElementById("result_BMI").innerHTML+="<p>你屬於重度肥胖！</p>"; break;
+        case -1:document.getElementById("result_BMI").innerHTML="<h3>你的身體質量指數(BMI)</h3>  <p style='text-align:center; font-size:26px;'>"+BMI_P+"<span style='text-align:right; color:#62D6FE;'>  你的體重過輕！</span></p>"; break;
+        case  0:document.getElementById("result_BMI").innerHTML="<h3>你的身體質量指數(BMI)</h3>  <p style='text-align:center; font-size:26px;'>"+BMI_P+"<span style='text-align:right; color:#BEF18C;'>  你的體重正常！</span></p>"; break;
+        case  1:document.getElementById("result_BMI").innerHTML="<h3>你的身體質量指數(BMI)</h3>  <p style='text-align:center; font-size:26px;'>"+BMI_P+"<span style='text-align:right; color:#99999C;'>  你有一點點過重！</span></p>"; break;
+        case  2:document.getElementById("result_BMI").innerHTML="<h3>你的身體質量指數(BMI)</h3>  <p style='text-align:center; font-size:26px;'>"+BMI_P+"<span style='text-align:right; color:yellow; font-weight:bold;'>  你屬於輕度肥胖！</span></p>"; break;
+        case  3:document.getElementById("result_BMI").innerHTML="<h3>你的身體質量指數(BMI)</h3>  <p style='text-align:center; font-size:26px;'>"+BMI_P+"<span style='text-align:right; color:#FFC100; font-weight:bold;'>  你屬於中度肥胖！</span></p>"; break;
+        case  4:document.getElementById("result_BMI").innerHTML="<h3>你的身體質量指數(BMI)</h3>  <p style='text-align:center; font-size:26px;'>"+BMI_P+"<span style='text-align:right; color:red; font-weight:bold;'>  你屬於重度肥胖！</span></p>"; break;
     }
-    document.getElementById("result_waist").innerHTML="<h3>你的腰圍</h3><p>"+waistCircumference+"公分</p>"
-    if(waistCircumferenceStatus==0)
-        document.getElementById("result_waist").innerHTML+="<p>你的腰圍正常！！</p>";
-    else document.getElementById("result_waist").innerHTML+="<p>你的腰圍過粗！！</p>";
 
-    document.getElementById("result_BMR").innerHTML="<h3>你的基礎代謝率(BMR)</h3><p>"+BMR_P+" 大卡</p>";
-    document.getElementById("result_dayCAL").innerHTML="<h3>你的每日所需熱量</h3><p>"+dayCal_P+" 大卡</p>";
+    switch(waistCircumferenceStatus)
+    {
+        case 0:document.getElementById("result_waist").innerHTML="<h3>你的腰圍   <span style='text-align:center; font-weight:bold'>"+waistCircumference+"公分</span> <span style='text-align:right; color:green;font-size:16px;'>   你的腰圍正常！</span></h3>"; break;
+        case 1:document.getElementById("result_waist").innerHTML="<h3>你的腰圍   <span style='text-align:center; font-weight:bold'>"+waistCircumference+"公分</span> <span style='text-align:right; color:red;font-size:16px;'>   你的腰圍過粗！</span></h3>"; break;
+    }
+
+    document.getElementById("result_BMR").innerHTML="<h3>你的基礎代謝率(BMR)</h3><p style='text-align:center;'><span style= font-size:28px;'>"+BMR_P+"</span>大卡</p>";
+    document.getElementById("result_dayCAL").innerHTML="<h3>你的每日所需熱量</h3><p style='text-align:center;'><span style= font-size:28px;'>"+dayCal_P+"</span>大卡</p>";
 
     console.log(BMI_P,BMR_P,dayCal_P,waistCircumferenceStatus);
 
