@@ -164,8 +164,8 @@ function CALCULATE()
 
     switch(waistCircumferenceStatus)
     {
-        case 0:document.getElementById("result_waist").innerHTML="<h3>你的腰圍   <span style='text-align:center; font-weight:bold'>"+waistCircumference+"公分</span> <span style='text-align:right; color:green;font-size:16px;'>   你的腰圍正常！</span></h3>"; break;
-        case 1:document.getElementById("result_waist").innerHTML="<h3>你的腰圍   <span style='text-align:center; font-weight:bold'>"+waistCircumference+"公分</span> <span style='text-align:right; color:red;font-size:16px;'>   你的腰圍過粗！</span></h3>"; break;
+        case 0:document.getElementById("result_waist").innerHTML="<h3>你的腰圍   <span style='text-align:center; font-weight:bold'>"+waistCircumference+"公分</span> <span style='text-align:right; color:green;font-size:16px; font-family:'Noto Sans TC Regular';'>   你的腰圍正常！</span></h3>"; break;
+        case 1:document.getElementById("result_waist").innerHTML="<h3>你的腰圍   <span style='text-align:center; font-weight:bold'>"+waistCircumference+"公分</span> <span style='text-align:right; color:red;font-size:16px; font-family:'Noto Sans TC Regular';'>   你的腰圍過粗！</span></h3>"; break;
     }
 
     document.getElementById("result_BMR").innerHTML="<h3>你的基礎代謝率(BMR)</h3><p style='text-align:center;'><span style= font-size:28px;'>"+BMR_P+"</span>大卡</p>";

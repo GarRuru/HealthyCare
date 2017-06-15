@@ -10,7 +10,8 @@
     <style type="text/css">
         body {font-family: 'Oswald', 'Noto Sans TC Regular',sans-serif;
             src: "NotoSansTC-Regular.otf";}
-        h3{font-family: 'Oswald';}
+        h1{font-family: 'Oswald','Noto Sans TC Regular';}
+        h3{font-family: 'Oswald','Noto Sans TC Regular';}
         #MyCAL{
             position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
             top: 10%;  /*設置垂直位置*/
@@ -73,7 +74,7 @@
     </style>
     <body>
         <!-- Side Navigation -->
-        <nav class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left w3-center" style="display:none" id="mySidebar">
+        <nav class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left w3-center" style="display:none;font-family:'Oswald','Noto Sans TC Regular'" id="mySidebar">
             <h1 class="w3-xxxlarge w3-text-theme">Menu</h1>
             <a href="Food.html" class="w3-bar-item w3-button"><i class="fa fa-fire w3-margin-bottom w3-text-theme" style="font-size:30px">
                     熱量試算</i></a>
@@ -95,9 +96,6 @@
             </div>
         </header>
         <div class="w3-container">
-            <div class="w3-center">
-                <h2>運動消耗熱量</h2>
-            </div>
             <div class="w3-row">
                 <div class="w3-col w3-container m3 w3-red">
                     <p>項目</p>
