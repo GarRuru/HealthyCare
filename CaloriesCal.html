@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <style type = "text/css">
-    .demo1{color: #fff; text-shadow: -1px -1px rgba(197, 223, 248,0.8),-2px -2px rgba(197, 223, 248,0.8),-3px -3px rgba(197, 223, 248,0.8),-4px -4px rgba(197, 223, 248,0.8),-5px -5px rgba(197, 223, 248,0.8),-6px -6px rgba(197, 223, 248,0.8); 
-    }
     body {font-family: 'Oswald';}
     h3{font-family: 'Oswald';}
 
@@ -46,7 +44,7 @@
         <!-- Side Navigation -->
         <nav class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left w3-center" style="display:none" id="mySidebar">
             <h1 class="w3-xxxlarge w3-text-theme">Menu</h1>
-            <a href="CaloriesCal.html" class="w3-bar-item w3-button"><i class="fa fa-fire w3-margin-bottom w3-text-theme" style="font-size:30px">
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-fire w3-margin-bottom w3-text-theme" style="font-size:30px">
                     熱量試算</i></a>
             <a href="StatAnalysis.html" class="w3-bar-item w3-button"><i class="fa fa-bar-chart w3-margin-bottom w3-text-theme" style="font-size:30px">
                     身體數值計算</i></a>
@@ -59,7 +57,7 @@
         <header class="w3-container w3-theme w3-padding" id="myHeader">
             <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
             <div class="w3-center">
-                <h1 class="w3-xxxlarge w3-animate-bottom"><span class = "demo1">你的健康小幫手</span></h1>
+                <h1 class="w3-xxxlarge w3-animate-bottom"><span>食物熱量計算</span></h1>
                 <div class="w3-padding-32">
 
                 </div>
@@ -87,432 +85,1012 @@
             </div>
         </div>
         <p></p>
-        <button onclick="myAccFunc('Demo1')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">全穀根莖類</button>
+        <button onclick="myAccFunc('Demo1')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">西式速食</button>
         <div id="Demo1" class="w3-hide">
             <div class="w3-container">
                 <form class="w3-quarter w3-container w3-card-4">
-                        <div class="w3-section">      
-                            <input id="bowl_rice" class="w3-check" type="checkbox">
-                            <label>白飯（一碗）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>培根起司蛋堡</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="toast" class="w3-check" type="checkbox">
-                            <label>吐司（兩片）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>牛肉起司漢堡</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="stream_bread" class="w3-check" type="checkbox">
-                            <label>饅頭（一個）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>雙層牛肉堡</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="noodles" class="w3-check" type="checkbox">
-                            <label>麵條（一人份）</label>
+                        <div class="w3-section" style="height:30px">       
+                            <label>燒肉米漢堡</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="robogao" class="w3-check" type="checkbox">
-                            <label>蘿蔔糕（四塊）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>豬肉起司堡</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="wire_noodle" class="w3-check" type="checkbox">
-                            <label>米粉（一碗）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>酥炸雞腿堡</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="yenmai" class="w3-check" type="checkbox">
-                            <label>燕麥片（一碗）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>烤雞腿堡</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>炸魚排堡</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>炸蝦排堡</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>炸雞腿</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>小雞塊</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>薯條</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>章魚燒個人披薩</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>泡菜豬肉個人披薩</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>海鮮個人披薩</label>
                         </div>
                         <hr>
 
                  </form>
                         <form class="w3-container w3-card-4 w3-quarter">
-                            <div class="w3-section" style="padding:3px">      
-                                <label>280</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>322</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:3px">      
-                                <label>140</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>665</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2.5px">      
-                                <label>280</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>800</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>280</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>488</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>280</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>400</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>140</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>560</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>280</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>411</label>
                             </div>
                             <hr>
-                            
+                             <div class="w3-section" style="height:30px">      
+                                <label>533</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>390</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>236</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>431</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>470</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>768</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>798</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>702</label>
+                            </div>
+                            <hr>
+                           
                         </form>
                             <form class="w3-container w3-card-4 w3-quarter">
-                                <div class="w3-section" style="padding:9px">      
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section"  style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
                             </form>
 
             </div>
         </div>
-        <button onclick="myAccFunc('Demo2')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">豆乳類</button>
+        <button onclick="myAccFunc('Demo2')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">中式食物</button>
         <div id="Demo2" class="w3-hide">
             <div class="w3-container">
                 <form class="w3-quarter w3-container w3-card-4">
-                        <div class="w3-section">      
-                            <input id="lowfat_milk" class="w3-check" type="checkbox">
-                            <label>低脂鮮奶（一杯）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>原味蛋餅</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="zerofat_milk" class="w3-check" type="checkbox">
-                            <label>脫脂鮮奶（一杯）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>鮪魚蛋餅</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="soymilk" class="w3-check" type="checkbox">
-                            <label>豆漿（一杯）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>起司蛋餅</label>
                         </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">       
+                            <label>玉米蛋餅</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>火腿蛋餅</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>鮪魚御飯糰</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>紫米飯糰</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>鍋貼（10個）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>油條</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>燒餅</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>煎蘿蔔糕（2片）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>饅頭</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>小籠包（6個）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>高麗菜生煎包</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>肉包</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>菜包</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>豬肉餡餅</label>
+                        </div>
+                        <hr>
+
+                        <div class="w3-section" style="height:30px">      
+                            <label>高麗菜水餃（10顆）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>肉圓（大）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>潤餅</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>蔥油餅（2片）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>蚵仔煎</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>營養三明治</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>皮蛋瘦肉粥</label>
+                        </div>
+                        <hr>
+
                  </form>
-                <form class="w3-container w3-card-4 w3-quarter">
-                    <div class="w3-section" style="padding:3px">      
-                        <label>120</label>
-                    </div>
-                    <hr>
-                    <div class="w3-section" style="padding:1px">      
-                        <label>80</label>
-                    </div>
-                    <hr>
-                    <div class="w3-section" style="padding:3px">      
-                        <label>55</label>
-                    </div>
-                </form>
-                <form class="w3-container w3-card-4 w3-quarter">
-                    <div class="w3-section" style="padding:2px">      
-                        <input class="w3-input" type="number" placeholder=0>
-                    </div>
-                    <div class="w3-section" style="padding:1px">      
-                        <input class="w3-input" type="number" placeholder=0>
-                    </div>
-                    <div class="w3-section" style="padding:1px">      
-                        <input class="w3-input" type="number" placeholder=0>
-                    </div>
-                </form>
+                        <form class="w3-container w3-card-4 w3-quarter">
+                            <div class="w3-section" style="height:30px">      
+                                <label>263</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>345</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>344</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>292</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>297</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>226</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>418</label>
+                            </div>
+                            <hr>
+                             <div class="w3-section" style="height:30px">      
+                                <label>753</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>252</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>256</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>357</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>444</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>378</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>259</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>484</label>
+                            </div>
+                            <hr>
+                           <div class="w3-section" style="height:30px">      
+                                <label>363</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>324</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>488</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>362</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>397</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>541</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>455</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>468</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>165</label>
+                            </div>
+                            <hr>
+                        </form>
+                            <form class="w3-container w3-card-4 w3-quarter">
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                
+                            </form>
 
             </div>
         </div>
-        <button onclick="myAccFunc('Demo3')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">魚肉蛋類</button>
+        <button onclick="myAccFunc('Demo3')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">飲料</button>
         <div id="Demo3" class="w3-hide">
             <div class="w3-container">
                 <form class="w3-quarter w3-container w3-card-4">
-                        <div class="w3-section">      
-                            <input id="fish" class="w3-check" type="checkbox">
-                            <label>各種魚類（100公克）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>番茄汁(280ml)</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="shrimp" class="w3-check" type="checkbox">
-                            <label>草蝦（6隻）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>柳橙原汁(400ml)</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="chickbrest" class="w3-check" type="checkbox">
-                            <label>雞胸肉（100公克）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>雪碧(600ml)</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="pork" class="w3-check" type="checkbox">
-                            <label>豬肉（100公克）</label>
+                        <div class="w3-section" style="height:30px">       
+                            <label>蘋果西打(630ml)</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="egg" class="w3-check" type="checkbox">
-                            <label>蛋（一顆）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>可樂(600ml)</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="beef" class="w3-check" type="checkbox">
-                            <label>牛肉（100公克）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>汽水(600ml)</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="tofu" class="w3-check" type="checkbox">
-                            <label>豆腐（100公克）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>沙士(600ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>寶礦力(580ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>烏龍茶(600ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>麥茶(600ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>紅茶(600ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>檸檬紅茶(600ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>茉莉花茶(600ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>奶茶(600ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>烏梅汁(350ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>青草茶(600ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>無糖茶(600ml)</label>
                         </div>
                         <hr>
 
+                        <div class="w3-section" style="height:30px">      
+                            <label>珍珠奶茶(700ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>冬瓜茶(700ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>西瓜汁(700ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>巧克力冰沙(591ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>可樂冰沙(700ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>果汁醋飲料(100ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>三合一咖啡隨身包(20g)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>咖啡飲料(250ml)</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>可可粉(30g)</label>
+                        </div>
+                        <hr>
+                        
                  </form>
                         <form class="w3-container w3-card-4 w3-quarter">
-                            <div class="w3-section" style="padding:3px">      
-                                <label>185</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>84</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:3px">      
-                                <label>55</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>180</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2.5px">      
-                                <label>185</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>282</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>228</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>240</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>55</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>252</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>250</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>216</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>98</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>252</label>
                             </div>
                             <hr>
-                            
-                        </form>
-                            <form class="w3-container w3-card-4 w3-quarter">
-                                <div class="w3-section" style="padding:9px">      
-                                    <input class="w3-input" type="number" placeholder=0>
-                                </div>
-                                <div class="w3-section" style="padding:6px">      
-                                    <input class="w3-input" type="number" placeholder=0>
-                                </div>
-                                <div class="w3-section"  style="padding:6px">      
-                                    <input class="w3-input" type="number" placeholder=0>
-                                </div>
-                                <div class="w3-section" style="padding:6px">      
-                                    <input class="w3-input" type="number" placeholder=0>
-                                </div>
-                                <div class="w3-section" style="padding:6px">      
-                                    <input class="w3-input" type="number" placeholder=0>
-                                </div>
-                                <div class="w3-section" style="padding:6px">      
-                                    <input class="w3-input" type="number" placeholder=0>
-                                </div>
-                                <div class="w3-section" style="padding:6px">      
-                                    <input class="w3-input" type="number" placeholder=0>
-                                </div>
-                                
-                            </form>
-
-            </div>
-        </div>
-        <button onclick="myAccFunc('Demo4')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">蔬菜水果</button>
-        <div id="Demo4" class="w3-hide">
-            <div class="w3-container">
-                <form class="w3-quarter w3-container w3-card-4">
-                        <div class="w3-section">      
-                            <input id="vege" class="w3-check" type="checkbox">
-                            <label>各式青菜（100公克）</label>
-                        </div>
-                        <hr>
-                        <div class="w3-section">      
-                            <input id="watermelon" class="w3-check" type="checkbox">
-                            <label>西瓜（100公克）</label>
-                        </div>
-                        <hr>
-                        <div class="w3-section">      
-                            <input id="banana" class="w3-check" type="checkbox">
-                            <label>香蕉（一根）</label>
-                        </div>
-                        <hr>
-                        <div class="w3-section">      
-                            <input id="papaya" class="w3-check" type="checkbox">
-                            <label>木瓜（100公克）</label>
-                        </div>
-                        <hr>
-                        <div class="w3-section">      
-                            <input id="little_tomato" class="w3-check" type="checkbox">
-                            <label>小番茄（100公克）</label>
-                        </div>
-                        <hr>
-                        <div class="w3-section">      
-                            <input id="guava" class="w3-check" type="checkbox">
-                            <label>芭樂（100公克）</label>
-                        </div>
-                        <hr>
-                        <div class="w3-section">      
-                            <input id="apple" class="w3-check" type="checkbox">
-                            <label>蘋果（100公克）</label>
-                        </div>
-                        <hr>
-
-                 </form>
-                        <form class="w3-container w3-card-4 w3-quarter">
-                            <div class="w3-section" style="padding:3px">      
-                                <label>50</label>
+                             <div class="w3-section" style="height:30px">      
+                                <label>151</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:3px">      
-                                <label>16.4</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>103</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2.5px">      
+                            <div class="w3-section" style="height:30px">      
                                 <label>120</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>32</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>180</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>34</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>216</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>38</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>204</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>40</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>240</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>183</label>
+                            </div>
+                            <hr>
+                           <div class="w3-section" style="height:30px">      
+                                <label>168</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>0</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>550</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>256</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>221</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>512</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>217</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>45</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>90</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>138</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>138</label>
                             </div>
                             <hr>
                             
                         </form>
                             <form class="w3-container w3-card-4 w3-quarter">
-                                <div class="w3-section" style="padding:9px">      
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section"  style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
                             </form>
 
             </div>
         </div>
-        <button onclick="myAccFunc('Demo5')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">油脂堅果類</button>
-        <div id="Demo5" class="w3-hide">
+        <button onclick="myAccFunc('Demo4')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter">零食點心</button>
+        <div id="Demo4" class="w3-hide">
             <div class="w3-container">
                 <form class="w3-quarter w3-container w3-card-4">
-                        <div class="w3-section">      
-                            <input id="oil" class="w3-check" type="checkbox">
-                            <label>動物油/植物油（一茶匙）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>牛軋糖（一塊）</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="walnut" class="w3-check" type="checkbox">
-                            <label>核桃（一粒）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>紅豆牛奶冰棒（一支）</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="guazi" class="w3-check" type="checkbox">
-                            <label>去殼瓜子（一湯匙）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>芋頭酥（一個）</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="sesame" class="w3-check" type="checkbox">
-                            <label>黑白芝麻（一茶匙）</label>
+                        <div class="w3-section" style="height:30px">       
+                            <label>太陽餅（一個）</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="cashew_net" class="w3-check" type="checkbox">
-                            <label>腰果（10公克）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>冰淇淋（一盒）</label>
+                        </div>
+                        <hr>                        
+                        <div class="w3-section" style="height:30px">      
+                            <label>紅豆車輪餅（一個）</label>
                         </div>
                         <hr>
-                        <div class="w3-section">      
-                            <input id="peanut" class="w3-check" type="checkbox">
-                            <label>花生（10公克）</label>
+                        <div class="w3-section" style="height:30px">      
+                            <label>沙琪瑪（一個）</label>
                         </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>巧克力棒（一盒）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>甜甜圈（一個）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>肉脯喜餅（1/8片）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>綠豆椪（一個）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>鳳梨酥（一個）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>桂圓蛋糕（一個）</label>
+                        </div>
+                        <hr>
+                        <div class="w3-section" style="height:30px">      
+                            <label>洋芋片（一罐）</label>
+                        </div>
+                        <hr>
+                        
 
                  </form>
                         <form class="w3-container w3-card-4 w3-quarter">
-                            <div class="w3-section" style="padding:3px">      
-                                <label>45</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>70</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:3px">      
-                                <label>23</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>158</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2.5px">      
-                                <label>45</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>200</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>23</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>215</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>50</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>220</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="padding:2px">      
-                                <label>50</label>
+                            <div class="w3-section" style="height:30px">      
+                                <label>230</label>
                             </div>
-                            
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>230</label>
+                            </div>
+                            <hr>
+                             <div class="w3-section" style="height:30px">      
+                                <label>240</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>250</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>285</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>420</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>440</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>460</label>
+                            </div>
+                            <hr>
+                            <div class="w3-section" style="height:30px">      
+                                <label>730</label>
+                            </div>
+                            <hr>
+
+                           
                         </form>
                             <form class="w3-container w3-card-4 w3-quarter">
-                                <div class="w3-section" style="padding:9px">      
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section"  style="padding:6px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:4px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:4px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                <div class="w3-section" style="padding:2px">      
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
                                     <input class="w3-input" type="number" placeholder=0>
                                 </div>
-                                
-                            </form>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
+                                <div class="w3-section" style="height:30px">      
+                                    <input class="w3-input" type="number" placeholder=0>
+                                </div>
+                                <hr>
 
+                            </form>
             </div>
         </div>
         </div>

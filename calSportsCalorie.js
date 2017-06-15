@@ -1,111 +1,108 @@
 //計算運動熱量 存的方法 101 第一大項的第一格
 
 var calorieSportsSum = 0.0;
-var sportType = 0;
+var sportType = "";
 
-function calcSportsCalories( kg ) //每小時消耗的卡路里 * 體重
+function calcSportsCalories( kg , hr) //每小時消耗的卡路里 * 體重
 {
     //走路
-    if(sportType == 101)
-        calorieSportsSum += 3.5 * kg;
-    else if(sportType == 102)
-        calorieSportsSum += 5.5 * kg;
+    if(sportType == "slowWalk")
+        calorieSportsSum += 3.5 * kg * hr;
+    else if(sportType == "fastWalk")
+        calorieSportsSum += 5.5 * kg * hr;
     //爬樓梯
-    else if(sportType == 201)
-        calorieSportsSum += 3.2 * kg;
-    else if(sportType == 202)
-        calorieSportsSum += 8.4 * kg;
+    else if(sportType == "downStair")
+        calorieSportsSum += 3.2 * kg * hr;
+    else if(sportType == "upStair")
+        calorieSportsSum += 8.4 * kg * hr;
     //跑步
-    else if(sportType == 301)
-        calorieSportsSum += 8.2 * kg;
-    else if(sportType == 302)
-        calorieSportsSum += 12.7 * kg;
-    else if(sportType == 303)
-        calorieSportsSum += 16.8 * kg;
+    else if(sportType == "slowRun")
+        calorieSportsSum += 8.2 * kg * hr;
+    else if(sportType == "fastRun12")
+        calorieSportsSum += 12.7 * kg * hr;
+    else if(sportType == "fastRun16")
+        calorieSportsSum += 16.8 * kg * hr;
     //騎腳踏車
-    else if(sportType == 401)
-        calorieSportsSum += 4.0 * kg;
-    else if(sportType == 402)
-        calorieSportsSum += 8.4 * kg;    
-    else if(sportType == 403)
-        calorieSportsSum += 12.6 * kg;
+    else if(sportType == "bike10")
+        calorieSportsSum += 4.0 * kg * hr;
+    else if(sportType == "bike20")
+        calorieSportsSum += 8.4 * kg * hr;    
+    else if(sportType == "bike30")
+        calorieSportsSum += 12.6 * kg * hr;
     //家事
-    else if(sportType == 501)
-        calorieSportsSum += 3.7 * kg;    
-    else if(sportType == 502)
-        calorieSportsSum += 4.2 * kg;
+    else if(sportType == "mop")
+        calorieSportsSum += 3.7 * kg * hr;    
+    else if(sportType == "gardening")
+        calorieSportsSum += 4.2 * kg * hr;
     //工作
-    else if(sportType == 601)
-        calorieSportsSum += 5.3 * kg;
-    else if(sportType == 602)
-        calorieSportsSum += 7.4 * kg;
-    else if(sportType == 603)
-        calorieSportsSum += 8.4 * kg;
-    //運動
-    else if(sportType == 701)
-        calorieSportsSum += 3.0 * kg;
-    else if(sportType == 702)
-        calorieSportsSum += 3.1 * kg;
-    else if(sportType == 703)
-        calorieSportsSum += 5.3 * kg;
-    else if(sportType == 704)
-        calorieSportsSum += 3.2 * kg;
-    else if(sportType == 705)
-        calorieSportsSum += 3.6 * kg;
-    else if(sportType == 706)
-        calorieSportsSum += 3.6 * kg;
-    else if(sportType == 707)
-        calorieSportsSum += 4.2 * kg;
-    else if(sportType == 708)
-        calorieSportsSum += 4.2 * kg;
-    else if(sportType == 709)
-        calorieSportsSum += 4.7 * kg;
-    else if(sportType == 710)
-        calorieSportsSum += 5.0 * kg;
-    else if(sportType == 711)
-        calorieSportsSum += 5.1 * kg;
-    else if(sportType == 712)
-        calorieSportsSum += 5.1 * kg;
-    else if(sportType == 713)
-        calorieSportsSum += 6.3 * kg;
-    else if(sportType == 714)
-        calorieSportsSum += 10.0 * kg;
-    else if(sportType == 715)
-        calorieSportsSum += 6.3 * kg;
-    else if(sportType == 716)
-        calorieSportsSum += 8.3 * kg;
-    else if(sportType == 717)
-        calorieSportsSum += 6.8 * kg;
-    else if(sportType == 718)
-        calorieSportsSum += 6.6 * kg;
-    else if(sportType == 719)
-        calorieSportsSum += 7.7 * kg;
-    else if(sportType == 720)
-        calorieSportsSum += 8.4 * kg;
-    else if(sportType == 721)
-        calorieSportsSum += 12.6 * kg;
-    else if(sportType == 722)
-        calorieSportsSum += 4.0 * kg;
-    else if(sportType == 723)
-        calorieSportsSum += 3.4 * kg;
-    else if(sportType == 724)
-        calorieSportsSum += 3.7 * kg;
-    else if(sportType == 725)
-        calorieSportsSum += 3.7 * kg;
-    else if(sportType == 726)
-        calorieSportsSum += 5.1 * kg;
-    else if(sportType == 727)
-        calorieSportsSum += 5.1 * kg;
-    else if(sportType == 728)
-        calorieSportsSum += 5.9 * kg;
-    else if(sportType == 729)
-        calorieSportsSum += 7.0 * kg;
-    else if(sportType == 730)
-        calorieSportsSum += 7.2 * kg;
-    else if(sportType == 731)
-        calorieSportsSum += 11.4 * kg;
-    else if(sportType == 732)
-        calorieSportsSum += 12.4 * kg;
+    else if(sportType == "toolMake")
+        calorieSportsSum += 5.3 * kg * hr;
+    else if(sportType == "farm")
+        calorieSportsSum += 7.4 * kg * hr;
+    else if(sportType == "carryHeavyObject")
+        calorieSportsSum += 8.4 * kg * hr;
+    //球類運動
+    else if(sportType == "volleyball")
+        calorieSportsSum += 3.6 * kg * hr;
+    else if(sportType == "bowling")
+        calorieSportsSum += 3.65 * kg * hr;
+    else if(sportType == "tabletennis")
+        calorieSportsSum += 4.2 * kg * hr;
+    else if(sportType == "baseball")
+        calorieSportsSum += 4.7 * kg * hr;
+    else if(sportType == "golf")
+        calorieSportsSum += 4.35 * kg * hr;
+    else if(sportType == "badmiton")
+        calorieSportsSum += 5.1 * kg * hr;
+    else if(sportType == "basketballHalf")
+        calorieSportsSum += 6.3 * kg * hr;
+    else if(sportType == "basketballFull")
+        calorieSportsSum += 8.3 * kg * hr;
+    else if(sportType == "tennis")
+        calorieSportsSum += 6.6 * kg * hr;
+    else if(sportType == "soccer")
+        calorieSportsSum += 7.7 * kg * hr;
+    //其他運動
+    else if(sportType == "yoga")
+        calorieSportsSum += 3.0 * kg * hr;
+    else if(sportType == "danceSlow")
+        calorieSportsSum += 3.1 * kg * hr;
+    else if(sportType == "danceFast")
+        calorieSportsSum += 5.3 * kg * hr;
+    else if(sportType == "frisbee")
+        calorieSportsSum += 3.2 * kg * hr;
+    else if(sportType == "taichi")
+        calorieSportsSum += 4.2 * kg * hr;
+    else if(sportType == "rollerskate")
+        calorieSportsSum += 5.1 * kg * hr;
+    else if(sportType == "swimSlow")
+        calorieSportsSum += 6.3 * kg * hr;
+    else if(sportType == "swimFast")
+        calorieSportsSum += 10.0 * kg * hr;
+    else if(sportType == "aerobicdance")
+        calorieSportsSum += 6.8 * kg * hr;
+    else if(sportType == "jumpropeSlow")
+        calorieSportsSum += 8.4 * kg * hr;
+    else if(sportType == "jumpropeFast")
+        calorieSportsSum += 12.6 * kg * hr;
+    else if(sportType == "healthydance")
+        calorieSportsSum += 4.0 * kg * hr;
+    else if(sportType == "canoeing")
+        calorieSportsSum += 3.4 * kg * hr;
+    else if(sportType == "silvershoes")
+        calorieSportsSum += 5.1 * kg * hr;
+    else if(sportType == "horseriding")
+        calorieSportsSum += 5.1 * kg * hr;
+    else if(sportType == "iceskate")
+        calorieSportsSum += 5.9 * kg * hr;
+    else if(sportType == "climbrock")
+        calorieSportsSum += 7.0 * kg * hr;
+    else if(sportType == "ski")
+        calorieSportsSum += 7.2 * kg * hr;
+    else if(sportType == "boxing")
+        calorieSportsSum += 11.4 * kg * hr;
+    else if(sportType == "rowing")
+        calorieSportsSum += 12.4 * kg * hr;
 
     calorieSportsSum = parseFloat(calorieSportsSum);
 }
