@@ -10,6 +10,35 @@
     <style type="text/css">
         body {font-family: 'Oswald';}
         h3{font-family: 'Oswald';}
+        #MyCAL{
+            position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
+            top: 35%;  /*設置垂直位置*/
+            right: -100px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
+            background: #FF8800;  /*背景顏色*/
+            padding: 10px 20px;
+            border-radius: 10px;  /*圓角*/
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            }
+        #MyCAL:hover{  /*當滑鼠移至此區塊時，伸縮區塊*/
+                right: -10px;
+            }
+        #MyCAL #title{
+                padding-right: 5px;  /*讓標題與連結中間有空隙*/
+            }
+        #MySportlist{
+        position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
+        top: 55%;  /*設置垂直位置*/
+        right: -100px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
+        background: #FF8800;  /*背景顏色*/
+        padding: 10px 20px;
+        border-radius: 10px;  /*圓角*/
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        }
+        #MySportlist:hover{  /*當滑鼠移至此區塊時，伸縮區塊*/
+            right: -10px;
+        }
 
     </style>
     <body>
@@ -49,12 +78,21 @@
                 <div class="w3-col w3-container m3 w3-yellow">
                     <p>幾小時</p>
                 </div>
-                <div class="w3-col w3-container m3 w3-teal">
-                    <p>消耗總熱量(大卡)</p>
-                </div>
+            
             </div>
         </div>
         <hr>
+
+        <!-- Side Bar-->
+        <div id="MyCAL">
+             <span id="side_title"></span>
+             <div id="result_CAL"></div>
+        </div>
+        <div id="MySportlist">
+            <span id="sportlist" >HELLOWWWWW</span>
+        </div>
+
+
         <!-- div table -->
         <div class="w3-container">
             <button onclick="myAccFunc('Demo1')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-threequarter" style="background-color:lightblue">走路</button>
@@ -80,11 +118,11 @@
                     </div>
                     <div class="w3-container w3-card-4 w3-quarter">
                         <div class="w3-section" style="height: 30px">      
-                            <input class="w3-input" id="slowWalk" type="number" placeholder=0>
+                            <input class="w3-input" id="slowWalk" type="number" placeholder="0">
                         </div>
                         <hr>
                         <div class="w3-section" style="height: 30px">      
-                            <input class="w3-input" id="fastWalk" type="number" placeholder=0>
+                            <input class="w3-input" id="fastWalk" type="number" placeholder="0">
                         </div>
                     </div>
                 </div>
@@ -112,11 +150,11 @@
                     </div>
                     <div class="w3-container w3-card-4 w3-quarter">
                         <div class="w3-section"style="height: 30px">      
-                            <input class="w3-input" id="downStair" type="number" placeholder=0>
+                            <input class="w3-input" id="downStair" type="number" placeholder="0">
                         </div>
                         <hr>
                         <div class="w3-section" style="height: 30px">      
-                            <input class="w3-input" id="upStair" type="number" placeholder=0>
+                            <input class="w3-input" id="upStair" type="number" placeholder="0">
                         </div>
                     </div>
                 </div>
@@ -152,15 +190,15 @@
                     </div>
                     <div class="w3-container w3-card-4 w3-quarter">
                         <div class="w3-section"style="height: 30px">      
-                            <input class="w3-input" id="slowRun" type="number" placeholder=0>
+                            <input class="w3-input" id="slowRun" type="number" placeholder="0">
                         </div>
                         <hr>
                         <div class="w3-section" style="height: 30px">      
-                            <input class="w3-input" id="fastRun12" type="number" placeholder=0>
+                            <input class="w3-input" id="fastRun12" type="number" placeholder="0">
                         </div>
                         <hr>
                         <div class="w3-section" style="height: 30px">      
-                            <input class="w3-input" id="fastRun16" type="number" placeholder=0>
+                            <input class="w3-input" id="fastRun16" type="number" placeholder="0">
                         </div>
                     </div>
                 </div>
@@ -196,15 +234,15 @@
                     </div>
                     <div class="w3-container w3-card-4 w3-quarter">
                         <div class="w3-section"style="height: 30px">      
-                            <input class="w3-input" id="bike10" type="number" placeholder=0>
+                            <input class="w3-input" id="bike10" type="number" placeholder="0">
                         </div>
                         <hr>
                         <div class="w3-section" style="height: 30px">      
-                            <input class="w3-input" id="bike20" type="number" placeholder=0>
+                            <input class="w3-input" id="bike20" type="number" placeholder="0">
                         </div>
                         <hr>
                         <div class="w3-section" style="height: 30px">      
-                            <input class="w3-input" id="bike30" type="number" placeholder=0>
+                            <input class="w3-input" id="bike30" type="number" placeholder="0">
                         </div>
                     </div>
                 </div>
@@ -232,11 +270,11 @@
                     </div>
                     <div class="w3-container w3-card-4 w3-quarter">
                         <div class="w3-section"style="height: 30px">      
-                            <input class="w3-input" id="mop" type="number" placeholder = 0>
+                            <input class="w3-input" id="mop" type="number" placeholder="0">
                         </div>
                         <hr>
                         <div class="w3-section" style="height: 30px">      
-                            <input class="w3-input" id="gardening" type="number" placeholder=0>
+                            <input class="w3-input" id="gardening" type="number" placeholder="0">
                         </div>
                     </div>
                 </div>
@@ -272,15 +310,15 @@
                     </div>
                     <div class="w3-container w3-card-4 w3-quarter">
                         <div class="w3-section"style="height: 30px">      
-                            <input class="w3-input" id="toolMake" type="number" placeholder=0>
+                            <input class="w3-input" id="toolMake" type="number" placeholder="0">
                         </div>
                         <hr>
                         <div class="w3-section" style="height: 30px">      
-                            <input class="w3-input" id="farm" type="number" placeholder=0>
+                            <input class="w3-input" id="farm" type="number" placeholder="0">
                         </div>
                         <hr>
                         <div class="w3-section" style="height: 30px">      
-                            <input class="w3-input" id="carryHeavyObject" type="number" placeholder=0>
+                            <input class="w3-input" id="carryHeavyObject" type="number" placeholder="0">
                         </div>
                     </div>
                 </div>
@@ -675,6 +713,7 @@
             </div>
         </footer>
         <!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+        <script src="calSportsCalorie.js"></script>
         <script>
             // Side navigation
             function w3_open() {

@@ -1,6 +1,21 @@
 //計算食物熱量
 var calorieFoodSum = 0;
-var foodType = 0;;
+var foodType = 0;
+
+window.addEventListener("load",readStat,false);
+
+function readStat()
+{
+    var personal_data=localStorage.Person;
+    console.log(personal_data);
+    var WEIG_DAYCAL=personal_data.split(" ");
+    WEIG_DAYCAL[2]=parseFloat(WEIG_DAYCAL[2]);
+    WEIG_DAYCAL[3]=parseFloat(WEIG_DAYCAL[3]);
+    console.log(WEIG_DAYCAL);
+    document.getElementById("side_title").innerHTML="你的體重:" + WEIG_DAYCAL[2] +"kg<br>你的每日所需熱量:" + WEIG_DAYCAL[3] + "kcal";
+
+}
+
 
 //計算總熱量
 function calcFoodCalories(){

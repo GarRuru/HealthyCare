@@ -3,8 +3,28 @@
 var calorieSportsSum = 0.0;
 var sportType = "";
 
-function calcSportsCalories( kg , hr) //每小時消耗的卡路里 * 體重
+window.addEventListener("load",readStat,false);
+
+function readStat()
 {
+    var personal_data=localStorage.Person;
+    console.log(personal_data);
+    var WEIG_DAYCAL=personal_data.split(" ");
+    WEIG_DAYCAL[2]=parseFloat(WEIG_DAYCAL[2]);
+    WEIG_DAYCAL[3]=parseFloat(WEIG_DAYCAL[3]);
+    WEIG_DAYCAL[4]=parseFloat(WEIG_DAYCAL[4]);
+    console.log(WEIG_DAYCAL);
+    document.getElementById("side_title").innerHTML="你的體重:" + WEIG_DAYCAL[2] +"kg<br>你的每日所需熱量:" + WEIG_DAYCAL[3] + "kcal<br>你的基礎代謝率:" + WEIG_DAYCAL[4] + "kcal";
+}
+document.getElementById("slowWalk").addEventListener("focus",calcSportsCalories(),false);
+function calcSportsCalories( kg , hr ) //每小時消耗的卡路里 * 體重
+{
+    calorieSportsSum=0;
+    calcFoodCalories+=(document.getElementById("slowWalk").value)*3.5*WEIG_DAYCAL[2];
+    //...
+
+    //前面的getbyid就是原先的小時，WEIG_DAYCAL[2]是已經抓到的體重
+
     //走路
     if(sportType == "slowWalk")
         calorieSportsSum += 3.5 * kg * hr;
@@ -103,8 +123,9 @@ function calcSportsCalories( kg , hr) //每小時消耗的卡路里 * 體重
         calorieSportsSum += 11.4 * kg * hr;
     else if(sportType == "rowing")
         calorieSportsSum += 12.4 * kg * hr;
-
+    console.log(calorieSportsSum);
     calorieSportsSum = parseFloat(calorieSportsSum);
+    document.getElementById("sportlist").innerHTML=calorieSportsSum;
 }
 
 function clearVariable()

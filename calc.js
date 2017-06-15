@@ -100,6 +100,7 @@ function allVariableClear()
     document.getElementById("height").value="0";
     document.getElementById("weight").value="0";
     document.getElementById("waist").value="0";
+    localStorage.clear();
 }
 
 
@@ -170,7 +171,9 @@ function CALCULATE()
     document.getElementById("result_BMR").innerHTML="<h3>你的基礎代謝率(BMR)</h3><p style='text-align:center;'><span style= font-size:28px;'>"+BMR_P+"</span>大卡</p>";
     document.getElementById("result_dayCAL").innerHTML="<h3>你的每日所需熱量</h3><p style='text-align:center;'><span style= font-size:28px;'>"+dayCal_P+"</span>大卡</p>";
 
-    console.log(BMI_P,BMR_P,dayCal_P,waistCircumferenceStatus);
+    //console.log(BMI_P,BMR_P,dayCal_P,waistCircumferenceStatus);
 
+    //----Save Data Session---
+    localStorage.setItem("Person", Age + " " + Height + " " + Weight + " " + dayCal_P + " " + BMR_P);
 
 }
