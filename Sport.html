@@ -12,7 +12,7 @@
         h3{font-family: 'Oswald';}
         #MyCAL{
             position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
-            top: 35%;  /*設置垂直位置*/
+            top: 10%;  /*設置垂直位置*/
             right: -100px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
             background: #FF8800;  /*背景顏色*/
             padding: 10px 20px;
@@ -28,7 +28,7 @@
             }
         #MySportlist{
         position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
-        top: 55%;  /*設置垂直位置*/
+        top: 50%;  /*設置垂直位置*/
         right: -100px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
         background: #FF8800;  /*背景顏色*/
         padding: 10px 20px;
@@ -40,12 +40,41 @@
             right: -10px;
         }
 
+
+        #submitBut{
+        position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
+        top: 30%;  /*設置垂直位置*/
+        right: -80px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
+        background: green;  /*背景顏色*/
+        padding: 10px 20px;
+        border-radius: 10px;  /*圓角*/
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        }
+        #submitBut:hover{  /*當滑鼠移至此區塊時，伸縮區塊*/
+            right: -10px;
+        }
+
+        #RstBut{
+        position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
+        top: 40%;  /*設置垂直位置*/
+        right: -60px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
+        background:#ff1300;  /*背景顏色*/
+        padding: 10px 20px;
+        border-radius: 10px;  /*圓角*/
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        }
+        #RstBut:hover{  /*當滑鼠移至此區塊時，伸縮區塊*/
+            right: -10px;
+        }
+
     </style>
     <body>
         <!-- Side Navigation -->
         <nav class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left w3-center" style="display:none" id="mySidebar">
             <h1 class="w3-xxxlarge w3-text-theme">Menu</h1>
-            <a href="CaloriesCal.html" class="w3-bar-item w3-button"><i class="fa fa-fire w3-margin-bottom w3-text-theme" style="font-size:30px">
+            <a href="Food.html" class="w3-bar-item w3-button"><i class="fa fa-fire w3-margin-bottom w3-text-theme" style="font-size:30px">
                     熱量試算</i></a>
             <a href="StatAnalysis.html" class="w3-bar-item w3-button"><i class="fa fa-bar-chart w3-margin-bottom w3-text-theme" style="font-size:30px">
                     身體數值計算</i></a>
@@ -89,7 +118,14 @@
              <div id="result_CAL"></div>
         </div>
         <div id="MySportlist">
-            <span id="sportlist" >HELLOWWWWW</span>
+            <span id="sportlist" ></span>
+        </div>
+
+        <div id="submitBut" onclick="calcSportsCalories()">
+            <span style="color:white"> 計算運動量！ </span>
+        </div>
+        <div id="RstBut" onclick="clearVariable()">
+            <span> 重置數據 </span>
         </div>
 
 

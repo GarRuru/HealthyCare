@@ -15,7 +15,7 @@
 
     #MyCAL{
     position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
-    top: 30%;  /*設置垂直位置*/
+    top: 10%;  /*設置垂直位置*/
     right: -100px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
     background: #FF8800;  /*背景顏色*/
     padding: 10px 20px;
@@ -32,7 +32,7 @@
 
     #MyCALlist{
     position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
-    top: 55%;  /*設置垂直位置*/
+    top: 50%;  /*設置垂直位置*/
     right: -100px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
     background: #FF8800;  /*背景顏色*/
     padding: 10px 20px;
@@ -41,6 +41,33 @@
     -webkit-border-radius: 10px;
     }
     #MyCALlist:hover{  /*當滑鼠移至此區塊時，伸縮區塊*/
+        right: -10px;
+    }
+    #submitBut{
+    position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
+    top: 30%;  /*設置垂直位置*/
+    right: -80px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
+    background: green;  /*背景顏色*/
+    padding: 10px 20px;
+    border-radius: 10px;  /*圓角*/
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    }
+    #submitBut:hover{  /*當滑鼠移至此區塊時，伸縮區塊*/
+        right: -10px;
+    }
+
+    #RstBut{
+    position: fixed;  /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
+    top: 40%;  /*設置垂直位置*/
+    right: -60px;  /*設置水平位置，依所放的內容多寡需要自行手動調整*/
+    background:#ff1300;  /*背景顏色*/
+    padding: 10px 20px;
+    border-radius: 10px;  /*圓角*/
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    }
+    #RstBut:hover{  /*當滑鼠移至此區塊時，伸縮區塊*/
         right: -10px;
     }
 
@@ -62,7 +89,7 @@
                     熱量試算</i></a>
             <a href="StatAnalysis.html" class="w3-bar-item w3-button"><i class="fa fa-bar-chart w3-margin-bottom w3-text-theme" style="font-size:30px">
                     身體數值計算</i></a>
-            <a href="Exercise.html" class="w3-bar-item w3-button"><i class="fa fa-bicycle w3-margin-bottom w3-text-theme" style="font-size:30px"> 運動量計算</i></a>
+            <a href="Sport.html" class="w3-bar-item w3-button"><i class="fa fa-bicycle w3-margin-bottom w3-text-theme" style="font-size:30px"> 運動量計算</i></a>
             <a href="#" class="w3-bar-item w3-button"><i class="fa fa-file-text w3-margin-bottom w3-text-theme" style="font-size:30px"> 說明文件</i></a>
             <a href="homepage.html" class="w3-bar-item w3-button"><i class="fa fa-home w3-margin-bottom w3-text-theme" style="font-size:30px"> 回到首頁</i></a>
             <button class="w3-bar-item w3-button" onclick="w3_close()"><i class="fa fa-remove w3-text-theme"style="font-size:30px">關閉</i></button>
@@ -84,8 +111,17 @@
         </div>
 
         <div id="MyCALlist">
-            <span id="foodlist" >HELLOWWWWW</span>
+            <span id="foodlist"></span>
         </div>
+
+        <div id="submitBut" onclick="calcFoodCalories()">
+            <span style="color:white"> 計算食物熱量！ </span>
+        </div>
+        <div id="RstBut" onclick="clearVariable()">
+            <span> 重置數據 </span>
+        </div>
+
+        
 
         <!-- According -->
         <div class="w3-container">
@@ -168,63 +204,63 @@
 
                  </form>
                         <form class="w3-container w3-card-4 w3-quarter">
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>322</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>665</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>800</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>488</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>400</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>560</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>411</label>
                             </div>
                             <hr>
-                             <div class="w3-section" style="height:30px">      
+                             <div class="w3-section w3-center" style="height:30px">      
                                 <label>533</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>390</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>236</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>431</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>470</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>768</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>798</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>702</label>
                             </div>
                             <hr>
@@ -232,63 +268,63 @@
                         </form>
                             <form class="w3-container w3-card-4 w3-quarter">
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="bacon_cheese_burg">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="beef_cheese_burg">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="double_beef_burg">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="yaki_rice_burg">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="pork_cheese_burg">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="chickleg_burg">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="bake_chick_burg">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="fried_fish_burg">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="shrimp_burg">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="fried_chick">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="chick_nugget">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="french_fries">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="opt_pizza">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="pork_pizza">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="seafood_pizza">
                                 </div>
                                 <hr>
                             </form>
@@ -399,198 +435,198 @@
 
                  </form>
                         <form class="w3-container w3-card-4 w3-quarter">
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>263</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>345</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>344</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>292</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>297</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>226</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>418</label>
                             </div>
                             <hr>
-                             <div class="w3-section" style="height:30px">      
+                             <div class="w3-section w3-center" style="height:30px">      
                                 <label>753</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>252</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>256</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>357</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>444</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>378</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>259</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>484</label>
                             </div>
                             <hr>
-                           <div class="w3-section" style="height:30px">      
+                           <div class="w3-section w3-center" style="height:30px">      
                                 <label>363</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>324</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>488</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>362</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>397</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>541</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>455</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>468</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>165</label>
                             </div>
                             <hr>
                         </form>
                             <form class="w3-container w3-card-4 w3-quarter">
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="org_eggcake">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="tuna_eggcake">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="cheese_eggcake">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="corn_eggcake">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="han_eggcake">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="tuna_rice">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="pur_rice">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="pan_dumpling">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="fritters">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="biscuit">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="radish_cake">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="stream_bread">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="little_lonbao">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="cabbage_bao">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="meat_bao">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="vege_bao">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="porkin_bin">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="cabbage_dump">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="meat_yuan">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="runbing">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="tsung_yo_bin">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="oaozin">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="sandwich">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="duck_egg_rice">
                                 </div>
                                 <hr>
                                 
@@ -710,107 +746,107 @@
                         
                  </form>
                         <form class="w3-container w3-card-4 w3-quarter">
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>84</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>180</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>282</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>240</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>252</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>216</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>252</label>
                             </div>
                             <hr>
-                             <div class="w3-section" style="height:30px">      
+                             <div class="w3-section w3-center" style="height:30px">      
                                 <label>151</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>103</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>120</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>180</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>216</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>204</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>240</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>183</label>
                             </div>
                             <hr>
-                           <div class="w3-section" style="height:30px">      
+                           <div class="w3-section w3-center" style="height:30px">      
                                 <label>168</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>0</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>550</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>256</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>221</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>512</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>217</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>45</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>90</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>138</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>138</label>
                             </div>
                             <hr>
@@ -818,107 +854,107 @@
                         </form>
                             <form class="w3-container w3-card-4 w3-quarter">
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="tomato_j">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="orange_j">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="sprite">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="applecider">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="cola">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="co2drink">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="sasi">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="pocari">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="woolungtea">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="mycha">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="blacktea">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="lemon_btea">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="moly_tea">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="mliktea">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="woomeazi">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="grasstea">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="nosugartea">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="pmtea">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="dongguatea">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="watermelon_j">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="choco_icesand">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="coke_icesand">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="juice_vin">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="c3in1cfe">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="cfe_d">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="cocoa_powd">
                                 </div>
                                 <hr>
                             </form>
@@ -958,10 +994,6 @@
                         </div>
                         <hr>
                         <div class="w3-section" style="height:30px">      
-                            <label>巧克力棒（一盒）</label>
-                        </div>
-                        <hr>
-                        <div class="w3-section" style="height:30px">      
                             <label>甜甜圈（一個）</label>
                         </div>
                         <hr>
@@ -989,59 +1021,55 @@
 
                  </form>
                         <form class="w3-container w3-card-4 w3-quarter">
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>70</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>158</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>200</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>215</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>220</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>230</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>230</label>
                             </div>
                             <hr>
-                             <div class="w3-section" style="height:30px">      
-                                <label>240</label>
-                            </div>
-                            <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>250</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>285</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>420</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>440</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>460</label>
                             </div>
                             <hr>
-                            <div class="w3-section" style="height:30px">      
+                            <div class="w3-section w3-center" style="height:30px">      
                                 <label>730</label>
                             </div>
                             <hr>
@@ -1050,59 +1078,55 @@
                         </form>
                             <form class="w3-container w3-card-4 w3-quarter">
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="niogabin">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="redBM_pop">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="yutoshu">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="sunbin">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="mmicecream">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="redBWheelB">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="shachima">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="donut">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="meat_shibin">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="greenbean_p">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="papple_cake">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="guiyuancake">
                                 </div>
                                 <hr>
                                 <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
-                                </div>
-                                <hr>
-                                <div class="w3-section" style="height:30px">      
-                                    <input class="w3-input" type="number" placeholder=0>
+                                    <input class="w3-input" type="number" placeholder=0 id="potato_chip">
                                 </div>
                                 <hr>
 
